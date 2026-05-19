@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".Activity.DetailCryptoActivity">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/coordinatorLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="48dp"
+                android:layout_marginEnd="24dp">
+
+                <ImageView
+                    android:id="@+id/backBtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:padding="12dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/back"
+                    app:tint="@color/white" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/stroke_bg"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/backBtn"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/logoImg"
+                        android:layout_width="26dp"
+                        android:layout_height="26dp"
+                        android:layout_margin="8dp"
+                        app:srcCompat="@drawable/bitcoin" />
+
+                    <TextView
+                        android:id="@+id/symbolNameTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="16dp"
+                        android:text="title"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="16dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/priceTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="000,000.00"
+                        android:textColor="@color/green"
+                        android:textSize="30dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/changePercentTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+0%"
+                        android:textColor="@color/green"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/availableBalanceTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="Доступно:\n0.0 $\n0.0 BTC/USDT"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginBottom="24dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="24dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/buyPositionBtn"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:layout_marginEnd="4dp"
+                            android:layout_weight="0.5"
+                            android:background="@drawable/green_bg"
+                            android:text="КУПИТИ"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <androidx.appcompat.widget.AppCompatButton
+                            android:id="@+id/sellPositionBtn"
+                            android:layout_width="0dp"
+                            android:layout_height="48dp"
+                            android:layout_marginStart="4dp"
+                            android:layout_weight="0.5"
+                            android:background="@drawable/semi_white_bg"
+                            android:text="ПРОДАТИ"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <Spinner
+                        android:id="@+id/orderTypeSpin"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/semi_white_bg" />
+
+                    <EditText
+                        android:id="@+id/priceEdt"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/semi_white_bg"
+                        android:ems="10"
+                        android:hint="Ціна (1 шт.)"
+                        android:inputType="numberDecimal"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/semi_white_bg"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:padding="8dp">
+
+                        <ImageView
+                            android:id="@+id/minusAmountBtn"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            app:srcCompat="@drawable/minus"
+                            app:tint="@color/white" />
+
+                        <EditText
+                            android:id="@+id/amountEdt"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:background="#00ffffff"
+                            android:ems="10"
+                            android:hint="Кількість"
+                            android:inputType="numberDecimal"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textColorHint="@color/white"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:id="@+id/plusAmountBtn"
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            app:srcCompat="@drawable/add"
+                            app:tint="@color/white" />
+                    </LinearLayout>
+
+                    <EditText
+                        android:id="@+id/totalEdt"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/semi_white_bg"
+                        android:ems="10"
+                        android:hint="Сума ($)"
+                        android:inputType="numberDecimal"
+                        android:textAlignment="center"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/sendOrderBtn"
+                        style="@android:style/Widget.Button"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="12dp"
+                        android:background="@drawable/green_bg"
+                        android:text="Купити / Продати"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:id="@+id/orderBookBlock"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@drawable/black_bg"
+                        android:padding="16dp"
+                        android:visibility="visible">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingBottom="8dp">
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1.3" android:text="Користувач" android:textColor="@color/grey" android:textSize="13sp" android:textStyle="bold" />
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="0.8" android:text="Ціна" android:textAlignment="center" android:textColor="@color/grey" android:textSize="13sp" android:textStyle="bold" />
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="0.8" android:text="Сума" android:textAlignment="center" android:textColor="@color/grey" android:textSize="13sp" android:textStyle="bold" />
+                            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1.1" android:text="Кількість" android:textAlignment="textEnd" android:textColor="@color/grey" android:textSize="13sp" android:textStyle="bold" />
+                            <View android:layout_width="24dp" android:layout_height="1dp"/>
+                        </LinearLayout>
+
+                        <androidx.core.widget.NestedScrollView
+                            android:id="@+id/orderBookScrollView"
+                            android:layout_width="match_parent"
+                            android:layout_height="250dp"
+                            android:layout_marginTop="8dp">
+                            <LinearLayout
+                                android:id="@+id/orderBookContainer"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical" />
+                        </androidx.core.widget.NestedScrollView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lockedOrderBookBlock"
+                        android:layout_width="match_parent"
+                        android:layout_height="280dp"
+                        android:background="@drawable/stroke_bg"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:src="@android:drawable/ic_secure"
+                            app:tint="#A0A0A0" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:text="Стакан ордерів"
+                            android:textColor="@color/white"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="Доступно для Срібного та Золотого планів"
+                            android:textColor="#A0A0A0"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </FrameLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginBottom="80dp"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@color/black2"
+            android:elevation="3dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:orientation="horizontal">
+                <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_gravity="center" android:layout_weight="0.2" android:orientation="vertical">
+                    <ImageView android:id="@+id/nav_wallet_img" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" app:srcCompat="@drawable/wallet" app:tint="@color/white" />
+                    <TextView android:id="@+id/nav_wallet_txt" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:textStyle="bold" android:text="Гаманець" android:textAlignment="center" android:textSize="12sp" android:textColor="@color/white" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_gravity="center" android:layout_weight="0.2" android:orientation="vertical">
+                    <ImageView android:id="@+id/nav_futures_img" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" app:srcCompat="@drawable/futures" app:tint="@color/white" />
+                    <TextView android:id="@+id/nav_futures_txt" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:textStyle="bold" android:text="Графіки" android:textAlignment="center" android:textSize="12sp" android:textColor="@color/white" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_gravity="center" android:layout_weight="0.2" android:orientation="vertical">
+                    <ImageView android:id="@+id/nav_trade_img" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" app:srcCompat="@drawable/trade" app:tint="@color/white" />
+                    <TextView android:id="@+id/nav_trade_txt" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:textStyle="bold" android:text="Рахунки" android:textAlignment="center" android:textSize="12sp" android:textColor="@color/white" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_gravity="center" android:layout_weight="0.2" android:orientation="vertical">
+                    <ImageView android:id="@+id/nav_market_img" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" app:srcCompat="@drawable/market" app:tint="@color/white" />
+                    <TextView android:id="@+id/nav_market_txt" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:textStyle="bold" android:text="Статистика" android:textAlignment="center" android:textSize="12sp" android:textColor="@color/white" />
+                </LinearLayout>
+                <LinearLayout android:layout_width="0dp" android:layout_height="match_parent" android:layout_gravity="center" android:layout_weight="0.2" android:orientation="vertical">
+                    <ImageView android:id="@+id/nav_profile_img" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="8dp" app:srcCompat="@drawable/profile" app:tint="@color/white" />
+                    <TextView android:id="@+id/nav_profile_txt" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:textStyle="bold" android:text="Профіль" android:textAlignment="center" android:textSize="12sp" android:textColor="@color/white" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

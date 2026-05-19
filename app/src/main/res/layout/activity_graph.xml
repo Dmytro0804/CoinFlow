@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:layout_marginTop="48dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/backBtn"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/back"
+            app:tint="@color/white" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:layout_weight="1"
+            android:text="Графіки"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/topBar"
+        app:layout_constraintBottom_toTopOf="@+id/coordinatorLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/semi_white_bg"
+                android:gravity="center"
+                android:padding="12dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/selectedCryptoLogo"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/bitcoin" />
+
+                <Spinner
+                    android:id="@+id/cryptoSelectorSpin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:backgroundTint="@color/white"/>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Історія цін"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/semi_white_bg"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Зміна ціни"
+                    android:textColor="#888"
+                    android:textSize="12sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="4dp">
+
+                    <TextView
+                        android:id="@+id/priceChangeUsdTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="-215,32 дол. США"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/priceChangePercentTxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="▼ 0.61%"
+                        android:textColor="@color/red"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView android:id="@+id/filter7d" android:layout_width="wrap_content" android:layout_height="wrap_content" android:padding="8dp" android:text="7 д." android:textColor="@color/white" android:textStyle="bold" />
+                <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"/>
+
+                <TextView android:id="@+id/filter1m" android:layout_width="wrap_content" android:layout_height="wrap_content" android:padding="8dp" android:text="1 м." android:textColor="@color/white" android:textStyle="bold" />
+                <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"/>
+
+                <TextView android:id="@+id/filter3m" android:layout_width="wrap_content" android:layout_height="wrap_content" android:padding="8dp" android:text="3 м." android:textColor="@color/white" android:textStyle="bold" />
+                <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"/>
+
+                <TextView android:id="@+id/filter6m" android:layout_width="wrap_content" android:layout_height="wrap_content" android:background="@drawable/blue_rounded_bg" android:paddingStart="12dp" android:paddingEnd="12dp" android:paddingTop="6dp" android:paddingBottom="6dp" android:text="6 м." android:textColor="@color/white" android:textStyle="bold" />
+                <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"/>
+
+                <TextView android:id="@+id/filter1y" android:layout_width="wrap_content" android:layout_height="wrap_content" android:padding="8dp" android:text="1 р." android:textColor="@color/white" android:textStyle="bold" />
+                <Space android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"/>
+
+                <TextView android:id="@+id/filterAll" android:layout_width="wrap_content" android:layout_height="wrap_content" android:padding="8dp" android:text="весь час" android:textColor="@color/white" android:textStyle="bold" />
+            </LinearLayout>
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/priceChart"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginTop="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Статистика цін"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/semi_white_bg"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ПОТОЧНА ЦІНА"
+                    android:textColor="#888"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/currentPriceTxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="64,523.12 $"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="6dp"
+                    android:background="@drawable/semi_white_bg"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ЗМІНА ЗА 24 ГОДИНИ" android:textColor="#888" android:textSize="10sp" />
+                    <TextView android:id="@+id/change24hPercentTxt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="↓ 2.58%" android:textColor="@color/red" android:textStyle="bold" android:layout_marginTop="4dp" />
+                    <TextView android:id="@+id/change24hUsdTxt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="-3.57 дол. США" android:textColor="#888" android:textSize="10sp" android:layout_marginTop="2dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="6dp"
+                    android:background="@drawable/semi_white_bg"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="7 ДНІВ ЗМІНА" android:textColor="#888" android:textSize="10sp" />
+                    <TextView android:id="@+id/change7dPercentTxt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="↓ 0.24%" android:textColor="@color/red" android:textStyle="bold" android:layout_marginTop="4dp" />
+                    <TextView android:id="@+id/change7dUsdTxt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="-0.32 дол. США" android:textColor="#888" android:textSize="10sp" android:layout_marginTop="2dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="6dp"
+                    android:background="@drawable/semi_white_bg"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="30 ДНІВ ЗМІНА" android:textColor="#888" android:textSize="10sp" />
+                    <TextView android:id="@+id/change30dPercentTxt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="↓ 61.52%" android:textColor="@color/red" android:textStyle="bold" android:layout_marginTop="4dp" />
+                    <TextView android:id="@+id/change30dUsdTxt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="-215.32 дол. США" android:textColor="#888" android:textSize="10sp" android:layout_marginTop="2dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="6dp"
+                    android:background="@drawable/semi_white_bg"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ЗМІНА ЗА 1 РІК" android:textColor="#888" android:textSize="10sp" />
+                    <TextView android:id="@+id/change1yPercentTxt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="↓ 61.52%" android:textColor="@color/red" android:textStyle="bold" android:layout_marginTop="4dp" />
+                    <TextView android:id="@+id/change1yUsdTxt" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="-215.32 дол. США" android:textColor="#888" android:textSize="10sp" android:layout_marginTop="2dp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="30dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinatorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@color/black2"
+            android:elevation="3dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.2"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/nav_wallet_img"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:srcCompat="@drawable/wallet"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:id="@+id/nav_wallet_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textStyle="bold"
+                        android:text="Гаманець"
+                        android:textAlignment="center"
+                        android:textSize="12sp"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.2"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/nav_futures_img"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:srcCompat="@drawable/futures"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:id="@+id/nav_futures_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textStyle="bold"
+                        android:text="Графіки"
+                        android:textAlignment="center"
+                        android:textSize="12sp"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.2"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/nav_trade_img"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:srcCompat="@drawable/trade"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:id="@+id/nav_trade_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textStyle="bold"
+                        android:text="Рахунки"
+                        android:textAlignment="center"
+                        android:textSize="12sp"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.2"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/nav_market_img"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:srcCompat="@drawable/market"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:id="@+id/nav_market_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textStyle="bold"
+                        android:text="Статистика"
+                        android:textAlignment="center"
+                        android:textSize="12sp"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.2"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/nav_profile_img"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        app:srcCompat="@drawable/profile"
+                        app:tint="@color/white" />
+
+                    <TextView
+                        android:id="@+id/nav_profile_txt"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textStyle="bold"
+                        android:text="Профіль"
+                        android:textAlignment="center"
+                        android:textSize="12sp"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.bottomnavigation.BottomNavigationView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
